@@ -34,9 +34,15 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
 
+    btnSalvarTexto: {
+        color: '#fff',
+        fontWeight: '700',
+    },
+
     txtCancelar:{
         color: '#f00',
       textAlign: 'center',
+      marginTop: 12,
     }
 
 });

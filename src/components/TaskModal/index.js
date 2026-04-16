@@ -1,13 +1,13 @@
 import { Modal, View, Text, TextInput, TouchableOpacity } from "react-native";
-import styles from "./styles.js";
+import { styles } from "./style";
 import { useState, useEffect } from "react";
 
 export default function TaskModal({ visible, onClose, onSave, taskToEdit }) {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    startDate: "",
-    endDate: "",
+    start: "",
+    end: "",
     priority: "",
   });
 
@@ -17,8 +17,8 @@ export default function TaskModal({ visible, onClose, onSave, taskToEdit }) {
       setForm({
         title: "",
         description: "",
-        startDate: "",
-        endDate: "",
+        start: "",
+        end: "",
         priority: "Média",
       });
   }, [taskToEdit, visible]);
@@ -47,15 +47,15 @@ export default function TaskModal({ visible, onClose, onSave, taskToEdit }) {
         <TextInput
           style={styles.input}
           placeholder="Data de Início: DD/MM"
-          value={form.startDate}
-          onChangeText={(v) => setForm({ ...form, startDate: v })}
+          value={form.start}
+          onChangeText={(v) => setForm({ ...form, start: v })}
         />
 
         <TextInput
           style={styles.input}
           placeholder="Data de Término: DD/MM"
-          value={form.endDate}
-          onChangeText={(v) => setForm({ ...form, endDate: v })}
+          value={form.end}
+          onChangeText={(v) => setForm({ ...form, end: v })}
         />
 
         <TextInput
@@ -76,7 +76,7 @@ export default function TaskModal({ visible, onClose, onSave, taskToEdit }) {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={onClose}>
-          <Text style={styles.btnCancelar}>
+          <Text style={styles.btncancelar}>
             Cancelar
             </Text>
         </TouchableOpacity>

@@ -13,3 +13,15 @@ export const theme = {
     }
   }
 };
+
+export const priorityOptions = ['Baixa', 'Média', 'Alta'];
+
+export const normalizePriority = (value) => {
+  const input = (value || '').toString().trim().toLowerCase();
+
+  if (input === 'alta') return 'Alta';
+  if (input === 'media' || input === 'média') return 'Média';
+  if (input === 'baixa') return 'Baixa';
+
+  return 'Média';
+};
